@@ -1,0 +1,57 @@
+//
+//  Coordinator.swift
+//  ProductsAssignment
+//
+//  Created by Siddharth Chauhan on 22/05/24.
+//
+
+import SwiftUI
+
+enum Page: Hashable {
+    case productList
+    case productDetails(Int)
+    
+    var pageIdentifier: String {
+        switch self {
+        case .productList:
+            return "productList"
+        case .productDetails:
+            return "productDetails"
+        }
+    }
+    
+    var id: String {
+        self.pageIdentifier
+    }
+}
+
+final class Coordinator: ObservableObject {
+    
+    @Published var path: NavigationPath
+    
+    init(path: NavigationPath) {
+        self.path = path
+    }
+    
+    func push(_ page: Page) {
+        path.append(page)
+    }
+    
+    func pop() {
+        path.removeLast()
+    }
+    
+    func popToRoot() {
+        path.removeLast(path.count)
+    }
+    
+    @ViewBuilder
+    func build(page: Page) -> some View {
+        switch page {
+        case .productList:
+            ProductsScreen(productsScreenViewModel: AppDIContainer().getProductDetailsViewModel())
+        case .productDetails(let productId):
+            ProductDetailScreen(productDetailsScreenViewModel: AppDIContainer().getProductDetailsViewModel(productId: productId))
+        }
+    }
+}
