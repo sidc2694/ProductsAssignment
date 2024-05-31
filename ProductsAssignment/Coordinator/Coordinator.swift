@@ -29,6 +29,8 @@ final class Coordinator: ObservableObject {
     
     @Published var path: NavigationPath
     
+    private var appDIContainer = AppDIContainer()
+    
     init(path: NavigationPath) {
         self.path = path
     }
@@ -49,9 +51,9 @@ final class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .productList:
-            ProductsScreen(productsScreenViewModel: AppDIContainer().getProductDetailsViewModel())
+            ProductsScreen(productsScreenViewModel: appDIContainer.getProductDetailsViewModel())
         case .productDetails(let productId):
-            ProductDetailScreen(productDetailsScreenViewModel: AppDIContainer().getProductDetailsViewModel(productId: productId))
+            ProductDetailScreen(productDetailsScreenViewModel: appDIContainer.getProductDetailsViewModel(productId: productId))
         }
     }
 }

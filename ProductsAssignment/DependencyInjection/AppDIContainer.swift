@@ -13,19 +13,21 @@ final class AppDIContainer {
         return APIManager.shared
     }()
 
-    lazy var fetchProductListUseCase: FetchProductListUseCaseProtocol = {
+    // Object creation for ProductList module
+    lazy private var getProductListUseCase: FetchProductListUseCaseProtocol = {
         return FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: apiRequestManager))
     }()
     
     func getProductDetailsViewModel() -> some (ProductsViewModelInputProtocol & ProductsViewModelOutputProtocol) {
-        return ProductsViewModel(fetchProductListUseCase: fetchProductListUseCase)
+        return ProductsViewModel(fetchProductListUseCase: getProductListUseCase)
     }
     
-    lazy var fetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol = {
+    // Object creation for ProductDetails module
+    lazy private var getProductDetailsUseCase: FetchProductDetailsUseCaseProtocol = {
         return FetchProductDetailsUseCase(repository: ProductDetailsRepository(apiRequestManager: apiRequestManager))
     }()
     
     func getProductDetailsViewModel(productId: Int) -> some (ProductDetailsViewModelInputProtocol & ProductDetailsViewModelOutputProtocol) {
-        return ProductDetailsViewModel(fetchProductDetailsUseCase: fetchProductDetailsUseCase, productId: productId)
+        return ProductDetailsViewModel(fetchProductDetailsUseCase: getProductDetailsUseCase, productId: productId)
     }
 }
