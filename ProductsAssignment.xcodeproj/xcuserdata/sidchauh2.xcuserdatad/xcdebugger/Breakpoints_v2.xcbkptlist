@@ -14,8 +14,8 @@
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "request(type:module:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "request(type:module:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,40 +46,10 @@
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "request(type:module:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7C79028F-4025-44A8-9144-632CAF9FDDA5 - de03e88fdfd7b313"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, ProductsAssignment.APIErrors&gt;) -&gt; ()) -&gt; () in ProductsAssignment.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, module: ProductsAssignment.Modules) -&gt; Combine.Future&lt;&#x3c4;_0_0, ProductsAssignment.APIErrors&gt;"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92">
-               </Location>
-               <Location
-                  uuid = "7C79028F-4025-44A8-9144-632CAF9FDDA5 - de03e88fdfd7b313"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, ProductsAssignment.APIErrors&gt;) -&gt; ()) -&gt; () in ProductsAssignment.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(type: &#x3c4;_0_0.Type, module: ProductsAssignment.Modules) -&gt; Combine.Future&lt;&#x3c4;_0_0, ProductsAssignment.APIErrors&gt;"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductDetailScreen<ViewModel>: View where ViewModel: ProductDetailsViewModelProtocol {
+struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewModelProtocol {
     
     @StateObject private var viewModel: ViewModel
     
@@ -115,5 +115,5 @@ struct ProductDetailScreen<ViewModel>: View where ViewModel: ProductDetailsViewM
 }
 
 #Preview {
-    ProductDetailScreen(productDetailsScreenViewModel: ProductDetailsViewModel(fetchProductDetailsUseCase: FetchProductDetailsUseCase(repository: ProductDetailsRepository()), productId: 1))
+    ProductDetailsView(productDetailsScreenViewModel: ProductDetailsViewModel(fetchProductDetailsUseCase: FetchProductDetailsUseCase(repository: ProductDetailsRepository()), productId: 1))
 }

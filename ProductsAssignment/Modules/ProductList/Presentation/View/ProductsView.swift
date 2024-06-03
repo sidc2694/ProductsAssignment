@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ProductsScreen<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: Coordinator
+struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
+    @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject private var viewModel: ViewModel
     
     /// Custom initializer to inject view model dependecy
@@ -35,5 +35,5 @@ struct ProductsScreen<ViewModel>: View where ViewModel: ProductsViewModelProtoco
 }
 
 #Preview {
-    ProductsScreen(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository())))
+    ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository())))
 }

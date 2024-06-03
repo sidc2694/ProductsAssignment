@@ -25,7 +25,7 @@ enum Page: Hashable {
     }
 }
 
-final class Coordinator: ObservableObject {
+final class AppCoordinator: ObservableObject, CoordinatorProtocol {
     
     @Published var path: NavigationPath
     
@@ -51,9 +51,9 @@ final class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .productList:
-            ProductsScreen(productsScreenViewModel: appDIContainer.getProductDetailsViewModel())
+            ProductsView(productsScreenViewModel: appDIContainer.getProductDetailsViewModel())
         case .productDetails(let productId):
-            ProductDetailScreen(productDetailsScreenViewModel: appDIContainer.getProductDetailsViewModel(productId: productId))
+            ProductDetailsView(productDetailsScreenViewModel: appDIContainer.getProductDetailsViewModel(productId: productId))
         }
     }
 }

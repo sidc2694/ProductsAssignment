@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductsRequest: Codable {
+public struct ProductsRequest: Codable {
     var limit: Int = 0
     var skip: Int = 0
 }

@@ -1,14 +1,14 @@
 //
 //  MockAPIManager.swift
-//  ProductsAssignment
+//  ProductsAssignmentTests
 //
-//  Created by Siddharth Chauhan on 22/05/24.
+//  Created by Siddharth Chauhan on 03/06/24.
 //
 
 import Foundation
 import Combine
 
-final class MockAPIManager: APIRequestProtocol {
+class MockAPIManager: APIRequestProtocol {
     static let shared = MockAPIManager()
     
     private var cancellables = Set<AnyCancellable>()
@@ -23,8 +23,7 @@ final class MockAPIManager: APIRequestProtocol {
     /// - Parameters:
     ///   - type: Type of object to be returned
     ///   - module: Enum defining which webservice call to make
-    func request<T: Codable>(type: T.Type,
-                             module: Modules) -> Future<T, APIErrors> {
+    func request<T>(type: T.Type, module: Modules) -> Future<T, APIErrors> where T : Decodable, T : Encodable {
         return Future<T, APIErrors> { [weak self] promise in
             guard let self else { return }
             let jsonFileName = self.isCheckFailure ? "\(module.jsonFileName)_Failure" : module.jsonFileName

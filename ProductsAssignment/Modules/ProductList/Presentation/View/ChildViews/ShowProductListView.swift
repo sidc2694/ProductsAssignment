@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: AppCoordinator
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var coordinator = Coordinator(path: NavigationPath())
+    @StateObject private var coordinator = AppCoordinator(path: NavigationPath())
     var body: some View {
         NavigationStack(path: $coordinator.path) {
             coordinator.build(page: .productList)
