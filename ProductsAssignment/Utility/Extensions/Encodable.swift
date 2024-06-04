@@ -18,7 +18,7 @@ extension Encodable {
             dict = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any>
             
         } catch {
-            print(error)
+            debugPrint(error)
         }
         return dict
     }

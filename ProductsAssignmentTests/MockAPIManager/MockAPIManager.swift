@@ -23,7 +23,7 @@ class MockAPIManager: APIRequestProtocol {
     /// - Parameters:
     ///   - type: Type of object to be returned
     ///   - module: Enum defining which webservice call to make
-    func request<T>(type: T.Type, module: Modules) -> Future<T, APIErrors> where T : Decodable, T : Encodable {
+    func request<T: Codable>(type: T.Type, module: Modules) -> Future<T, APIErrors> {
         return Future<T, APIErrors> { [weak self] promise in
             guard let self else { return }
             let jsonFileName = self.isCheckFailure ? "\(module.jsonFileName)_Failure" : module.jsonFileName
@@ -70,7 +70,7 @@ final class MockJsonHandler {
                 return data
             }
         } catch {
-            print("error: \(error)")
+            debugPrint("error: \(error)")
         }
         return nil
     }

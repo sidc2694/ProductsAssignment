@@ -30,7 +30,6 @@ final class NetworkCheckManager {
                 self.isInternetAvailable = false
             }
             self.networkConnectionUpdated?(self.isInternetAvailable)
-            print(path.isExpensive)
         }
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)

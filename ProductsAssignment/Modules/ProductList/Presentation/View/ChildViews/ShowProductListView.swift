@@ -20,7 +20,6 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
                     ForEach(viewModel.productList) { product in
                         ProductCellView(productCell: viewModel.createProductCellData(product: product))
                             .onAppear(perform: {
-                                print(product.id)
                                 viewModel.loadMoreContent(currentItem: product)
                             })
                             .onTapGesture {

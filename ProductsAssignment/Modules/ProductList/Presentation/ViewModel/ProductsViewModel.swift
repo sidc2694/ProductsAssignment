@@ -95,8 +95,7 @@ extension ProductsViewModel {
                 switch completion {
                 case .failure(let apiErrors):
                     self.handleFailure(apiErrors: apiErrors)
-                case .finished:
-                    debugPrint("Finished")
+                default: break
                 }
             } receiveValue: { [weak self] productData in
                 guard let self else { return }

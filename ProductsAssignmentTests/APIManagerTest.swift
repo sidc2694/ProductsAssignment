@@ -25,8 +25,7 @@ final class APIManagerTest: XCTestCase {
                 case .failure(let apiErrors):
                     errorMessage = apiErrors.failureReason ?? Constants.Errors.somethingWentWrong
                     isDataLoaded = false
-                case .finished:
-                    print("Finished")
+                default: break
                 }
             } receiveValue: { productList in
                 guard let products = productList.products else {

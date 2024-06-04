@@ -20,8 +20,7 @@ final class FetchProductDetailsUseCaseTest: XCTestCase {
                 switch completion {
                 case .failure(let apiErrors):
                     XCTFail(apiErrors.failureReason ?? "Error")
-                case .finished:
-                    debugPrint("Finished")
+                default: break
                 }
             } receiveValue: { productDetails in
                 XCTAssertNotNil(productDetails)

@@ -72,8 +72,7 @@ extension ProductDetailsViewModel {
                 case .failure(let apiErrors):
                     self.errorMessage = apiErrors.failureReason
                     self.state = .errorLoading(self.errorMessage)
-                case .finished:
-                    debugPrint("Finished")
+                default: break
                 }
             } receiveValue: { [weak self] productDetails in
                 guard let self else { return }
