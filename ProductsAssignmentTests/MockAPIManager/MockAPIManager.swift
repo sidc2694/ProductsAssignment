@@ -69,9 +69,7 @@ final class MockJsonHandler {
                 let data = try Data(contentsOf: fileUrl)
                 return data
             }
-        } catch {
-            debugPrint("error: \(error)")
-        }
+        } catch { }
         return nil
     }
 }
