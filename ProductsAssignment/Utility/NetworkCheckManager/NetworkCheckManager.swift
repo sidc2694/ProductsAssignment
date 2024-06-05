@@ -8,11 +8,6 @@
 import Network
 import Foundation
 
-protocol NetworkCheckManagerProtocol {
-    var isInternetAvailable: Bool { get }
-    var networkConnectionUpdated: ((Bool) -> Void)? { get set }
-}
-
 // NetworkCheckManager checks for internet connection of the application.
 final class NetworkCheckManager: NetworkCheckManagerProtocol {
     static let shared = NetworkCheckManager()
