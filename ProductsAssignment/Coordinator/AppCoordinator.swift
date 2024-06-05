@@ -10,7 +10,7 @@ import SwiftUI
 enum Page: Hashable {
     case productList
     case productDetails(Int)
-    
+
     var pageIdentifier: String {
         switch self {
         case .productList:
@@ -19,34 +19,34 @@ enum Page: Hashable {
             return "productDetails"
         }
     }
-    
+
     var id: String {
         self.pageIdentifier
     }
 }
 
 final class AppCoordinator: ObservableObject, CoordinatorProtocol {
-    
+
     @Published var path: NavigationPath
-    
+
     private var appDIContainer = AppDIContainer()
-    
+
     init(path: NavigationPath) {
         self.path = path
     }
-    
+
     func push(_ page: Page) {
         path.append(page)
     }
-    
+
     func pop() {
         path.removeLast()
     }
-    
+
     func popToRoot() {
         path.removeLast(path.count)
     }
-    
+
     @ViewBuilder
     func build(page: Page) -> some View {
         switch page {

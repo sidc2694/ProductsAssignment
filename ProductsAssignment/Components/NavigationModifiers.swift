@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct NavigationModifiers: ViewModifier {
-    
+
     let title: String
-    
+
     func body(content: Content) -> some View {
         content
             .navigationTitle(title)

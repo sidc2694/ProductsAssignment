@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProductCellView: View {
-    
-    private let productCell: ProductCell!
-    
-    init(productCell: ProductCell!) {
+
+    private let productCell: ProductCell
+
+    init(productCell: ProductCell) {
         self.productCell = productCell
     }
-    
+
     var body: some View {
         HStack(spacing: 15) {
             AsyncImage(url: productCell.thumbnailUrl, content: { image in
@@ -29,29 +29,27 @@ struct ProductCellView: View {
                 ProgressView()
             }) //: AsyncImage
             .frame(width: 150, height: 150)
-            
+
             VStack(alignment: .leading, spacing: 5) {
                 Text(productCell.title ?? "")
                     .foregroundStyle(.titleText)
                     .font(.headline)
                     .fontWeight(.semibold)
+                    .padding(.bottom, 10)
                 HStack(alignment: .bottom) {
                     Text("$\(productCell.finalPrice ?? 0.0, specifier: "%.2f")")
                         .font(.system(size: 15))
                         .fontWeight(.semibold)
                         .foregroundStyle(.red)
-                    
+
                     Text("$\(productCell.price ?? 0.0, specifier: "%.2f")")
                         .foregroundStyle(.darkGray)
                         .font(.system(size: 13))
                         .fontWeight(.light)
                         .strikethrough()
                 }
-                Text(productCell.description ?? "")
-                    .foregroundStyle(.darkGray)
-                    .font(.footnote)
+                Spacer()
             } //: VStack
-            
         } //: HStack
         .frame(height: 150)
         .listRowInsets(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15))
@@ -60,6 +58,6 @@ struct ProductCellView: View {
 
 #Preview {
     List {
-        ProductCellView(productCell: ProductCell(thumbnailUrl: URL(string: "https://cdn.dummyjson.com/product-images/100/thumbnail.jpg"), title: "Crystal chandelier maria theresa for 12 light", description: "Crystal chandelier maria theresa for 12 light", price: 20, finalPrice: 10))
+        ProductCellView(productCell: ProductCell(thumbnailUrl: URL(string: "https://cdn.dummyjson.com/product-images/100/thumbnail.jpg"), title: "Crystal chandelier maria theresa for 12 light", price: 20, finalPrice: 10))
     }
 }

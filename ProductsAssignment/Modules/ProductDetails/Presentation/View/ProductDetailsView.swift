@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewModelProtocol {
-    
     @StateObject private var viewModel: ViewModel
-    
+
     /// Custom initializer to inject view model dependecy
     /// - Parameters:
-    ///   - productsScreenViewModel: Injecting dependency of ProductsViewModelProtocol type to make it loosely coupled with view model class and expose only those methods which are relevant for this view.
+    /// - productsScreenViewModel: Injecting dependency of ProductsViewModelProtocol type to make it loosely coupled with view model class and expose only those methods which are relevant for this view.
     init(productDetailsScreenViewModel: ViewModel) {
         _viewModel = StateObject(wrappedValue: productDetailsScreenViewModel)
-        
+
         // Sets page indicators for tab view pagination.
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.navigationBarColor)
         UIPageControl.appearance().pageIndicatorTintColor = UIColor(.navigationBarColor).withAlphaComponent(0.3)
     }
-    
+
     var body: some View {
         switch viewModel.state {
         case .startLoading:
@@ -44,7 +43,7 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                             .padding()
                             .font(.system(size: 25))
                             .bold()
-                        
+
                         TabView {
                             ForEach(viewModel.productDetails.images ?? [], id: \.self) { item in
                                 AsyncImage(url: URL(string: item), content: { image in
@@ -59,15 +58,15 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                         .tabViewStyle(PageTabViewStyle())
                         .frame(height: UIScreen.main.bounds.height/3)
                         .shadow(color: .black.opacity(0.6), radius: 20)
-                        
-                        HStack() {
+
+                        HStack {
                             HStack(spacing: -10) {
                                 HStack(alignment: .bottom) {
                                     Text("$\(viewModel.productDetails.finalPrice ?? 0.0, specifier: "%.2f")")
                                         .font(.system(size: 15))
                                         .fontWeight(.semibold)
                                         .foregroundStyle(.red)
-                                    
+
                                     Text("$\(viewModel.productDetails.price ?? 0.0, specifier: "%.2f")")
                                         .font(.system(size: 13))
                                         .fontWeight(.light)
@@ -80,7 +79,7 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                             }
                         } //: HStack
                         .padding()
-                        
+
                         VStack(alignment: .leading) {
                             Text(Constants.Labels.description)
                                 .foregroundStyle(.titleText)
@@ -88,7 +87,7 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                                 .fontWeight(.semibold)
                                 .padding()
                                 .padding(.top, -15)
-                            
+
                             Text(viewModel.productDetails.description ?? "")
                                 .foregroundStyle(.darkGray)
                                 .font(.system(size: 13))
@@ -109,8 +108,6 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                 .toolbarBackground(.visible, for: .navigationBar)
             }
         }
-        
-        
     }
 }
 

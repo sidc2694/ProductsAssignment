@@ -11,7 +11,7 @@ import Combine
 struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
     @EnvironmentObject private var coordinator: AppCoordinator
     @ObservedObject var viewModel: ViewModel
-    
+
     var body: some View {
         ZStack {
             BackgroundView()
@@ -30,7 +30,7 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
                 } //: List
                 .scrollContentBackground(.hidden)
                 .alert(viewModel.alertMessage, isPresented: $viewModel.showingAlert) {
-                    Button(Constants.Labels.ok, role: .cancel) { }
+                    Button(Constants.Labels.okForAlert, role: .cancel) { }
                 }
                 .listRowSpacing(15)
             }

@@ -29,7 +29,7 @@ final class APIManagerTest: XCTestCase {
                 }
             } receiveValue: { productList in
                 guard let products = productList.products else {
-                    errorMessage = APIErrors.noDataFound.failureReason!
+                    errorMessage = Constants.Errors.noInternetAvailable
                     isDataLoaded = false
                     return
                 }

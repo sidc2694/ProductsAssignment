@@ -8,17 +8,17 @@
 import Foundation
 import Combine
 
-class MockAPIManager: APIRequestProtocol {
+final class MockAPIManager: APIRequestProtocol {
     static let shared = MockAPIManager()
-    
+
     private var cancellables = Set<AnyCancellable>()
     private var isCheckFailure = false
-    
+
     // MARK: - Initializer
     init(isCheckFailure: Bool = false) {
         self.isCheckFailure = isCheckFailure
     }
-    
+
     /// Generic method to make webservice call
     /// - Parameters:
     ///   - type: Type of object to be returned
@@ -38,19 +38,23 @@ class MockAPIManager: APIRequestProtocol {
                 .sink { completion in
                     switch completion {
                     case .failure(let error):
-                        promise(.failure(error as! APIErrors))
+                        if let apiError = error as? APIErrors {
+                            promise(.failure(apiError))
+                        } else {
+                            promise(.failure(.network(error)))
+                        }
                     default: break
                     }
                 } receiveValue: { promise(.success($0)) }
                 .store(in: &self.cancellables)
         }
     }
-    
+
 }
 
 // MARK: - MockJsonHandler
 final class MockJsonHandler {
-    
+
     class func getApiResponse(jsonFileName: String) -> Future<Data, APIErrors> {
         return Future<Data, APIErrors> { promise in
             let data = readLocalJSONFile(forName: jsonFileName)
@@ -58,7 +62,7 @@ final class MockJsonHandler {
             promise(.success(data))
         }
     }
-    
+
     /// Read from JSON file
     /// - Parameter name: Name of JOSN file
     /// - Returns: Return file content in Data format

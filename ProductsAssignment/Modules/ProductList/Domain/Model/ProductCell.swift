@@ -10,7 +10,6 @@ import Foundation
 struct ProductCell {
     let thumbnailUrl: URL?
     let title: String?
-    let description: String?
     let price: Double?
     let finalPrice: Double?
 }

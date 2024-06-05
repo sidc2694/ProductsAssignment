@@ -45,7 +45,7 @@ extension Modules: JsonFileName {
 }
 
 extension Modules: EndPointType {
-    
+
     var path: String {
         switch self {
         case .products:
@@ -54,11 +54,11 @@ extension Modules: EndPointType {
             return "products/\(id)"
         }
     }
-    
+
     var baseUrl: String {
         return "https://dummyjson.com/"
     }
-    
+
     var url: URL? {
         var urlString = "\(baseUrl)\(path)"
         if method == .get {
@@ -66,7 +66,7 @@ extension Modules: EndPointType {
         }
         return URL(string: urlString)
     }
-    
+
     var method: HttpMethods {
         switch self {
         case .products:
@@ -75,9 +75,9 @@ extension Modules: EndPointType {
             return .get
         }
     }
-    
+
     var parameters: Encodable? {
-        
+
         switch self {
         case .products(let productsRequest):
             return productsRequest
@@ -85,7 +85,7 @@ extension Modules: EndPointType {
             return nil
         }
     }
-    
+
     // Creates query string for GET requests.
     func createQueryString() -> String {
         var query: String = ""
@@ -96,8 +96,8 @@ extension Modules: EndPointType {
         }
         return query
     }
-    
-    var header: [String : String]? {
+
+    var header: [String: String]? {
         return ["Content-Type": "application/json"]
     }
 }

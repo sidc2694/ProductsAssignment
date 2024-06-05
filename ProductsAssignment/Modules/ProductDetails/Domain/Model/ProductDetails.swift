@@ -16,7 +16,7 @@ struct ProductDetails {
     let discountPercentage: Double?
     let stock: Int?
     let finalPrice: Double?
-    
+
     init(productId: Int!, title: String?, description: String?, images: [String]?, price: Double?, discountPercentage: Double?, stock: Int?) {
         self.productId = productId
         self.title = title

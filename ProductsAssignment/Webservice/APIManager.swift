@@ -11,14 +11,17 @@ import Combine
 // MARK: - APIManager
 final class APIManager: APIRequestProtocol {
     static let shared = APIManager()
-    
+
+    private var networkCheckHandler: NetworkCheckManagerProtocol
     private var cancellables = Set<AnyCancellable>()
-    
+
     // MARK: - Initializer
-    private init() { }
-    
+    private init(networkCheckManager: NetworkCheckManagerProtocol = NetworkCheckManager.shared) {
+        self.networkCheckHandler = networkCheckManager
+    }
+
     // MARK: - Request Call
-    
+
     /// Generic method to make webservice call
     /// - Parameters:
     ///   - type: Type of object to be returned
@@ -31,10 +34,10 @@ final class APIManager: APIRequestProtocol {
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = module.method.rawValue
             urlRequest.allHTTPHeaderFields = module.header
-            
+
             // Checks for internet connectivity before making webservice call
-            guard NetworkCheckManager.shared.isInternetAvailable else { return promise(.failure(.noInternet)) }
-            
+            guard self.networkCheckHandler.isInternetAvailable else { return promise(.failure(.noInternet)) }
+
             URLSession.shared.dataTaskPublisher(for: urlRequest)
                 .receive(on: RunLoop.main)
                 .tryMap { (data, response) in
@@ -42,7 +45,7 @@ final class APIManager: APIRequestProtocol {
                           200...299 ~= responseCode.statusCode else {
                         throw APIErrors.invalidResponse
                     }
-                    
+
                     let decoder = JSONDecoder()
                     guard let result = try? decoder.decode(T.self, from: data) else {
                         throw APIErrors.decodingFailed
@@ -52,8 +55,8 @@ final class APIManager: APIRequestProtocol {
                 .sink { completion in
                     switch completion {
                     case .failure(let error):
-                        if error is APIErrors {
-                            promise(.failure(error as! APIErrors))
+                        if let apiError = error as? APIErrors {
+                            promise(.failure(apiError))
                         } else {
                             promise(.failure(.network(error)))
                         }

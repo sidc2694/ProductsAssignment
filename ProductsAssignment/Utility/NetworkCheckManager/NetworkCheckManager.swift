@@ -8,19 +8,24 @@
 import Network
 import Foundation
 
+protocol NetworkCheckManagerProtocol {
+    var isInternetAvailable: Bool { get }
+    var networkConnectionUpdated: ((Bool) -> Void)? { get set }
+}
+
 // NetworkCheckManager checks for internet connection of the application.
-final class NetworkCheckManager {
+final class NetworkCheckManager: NetworkCheckManagerProtocol {
     static let shared = NetworkCheckManager()
-    
+
     private let monitor = NWPathMonitor()
-    
-    var isInternetAvailable = true
+
+    var isInternetAvailable: Bool = true
     var networkConnectionUpdated: ((Bool) -> Void)?
-    
+
     private init() {
         checkNetworkConnectivity()
     }
-    
+
     func checkNetworkConnectivity() {
         monitor.pathUpdateHandler = { [weak self] path in
             guard let self else { return }

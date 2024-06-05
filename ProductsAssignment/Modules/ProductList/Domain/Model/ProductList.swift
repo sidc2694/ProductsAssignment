@@ -15,7 +15,6 @@ struct ProductList {
 struct Product: Identifiable, Hashable {
     let productId: Int!
     let title: String?
-    let description: String?
     let price: Double?
     let discountPercentage: Double?
     let thumbnail: String?
@@ -24,11 +23,10 @@ struct Product: Identifiable, Hashable {
     var id: Int {
         productId
     }
-    
-    init(productId: Int!, title: String?, description: String?, price: Double?, discountPercentage: Double?, thumbnail: String?) {
+
+    init(productId: Int!, title: String?, price: Double?, discountPercentage: Double?, thumbnail: String?) {
         self.productId = productId
         self.title = title
-        self.description = description
         self.price = price
         self.discountPercentage = discountPercentage
         self.thumbnail = thumbnail

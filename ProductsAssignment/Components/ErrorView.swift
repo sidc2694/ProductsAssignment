@@ -10,7 +10,7 @@ import SwiftUI
 struct ErrorView: View {
     var error: String
     var screenTitle: String = Constants.ScreenTitles.products
-    
+
     var body: some View {
         ZStack {
             BackgroundView()
@@ -25,5 +25,5 @@ struct ErrorView: View {
 }
 
 #Preview {
-    ErrorView(error: APIErrors.noInternet.failureReason!)
+    ErrorView(error: Constants.Errors.noInternetAvailable)
 }

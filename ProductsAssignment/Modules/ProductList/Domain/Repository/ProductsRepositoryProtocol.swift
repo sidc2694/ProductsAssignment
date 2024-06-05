@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 
-protocol ProductsRepositoryProtocol{
+protocol ProductsRepositoryProtocol {
     func getProductList(request: ProductsRequest) -> Future<ProductList, APIErrors>
 }

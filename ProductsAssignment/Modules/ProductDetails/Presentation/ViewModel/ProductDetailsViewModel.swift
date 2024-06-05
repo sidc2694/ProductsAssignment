@@ -16,31 +16,31 @@ enum ProductDetailsViewModelEvents {
 }
 
 final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
-    let networkCheckHandler = NetworkCheckManager.shared
-    
+    private var networkCheckHandler: NetworkCheckManagerProtocol
     private(set) var productDetails: ProductDetails!
-    
+
     // View will know only about the action it needs to perform and not the condition because of which that action is performed so adding this state property whch will notify view of doing certain events based on the business logic written in view model.
     @Published private(set) var state: ProductDetailsViewModelEvents = .startLoading
-    
+
     private var productId: Int
     private let fetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
     private var errorMessage: String!
-    
-    //MARK: - Initializer
-    
+
+    // MARK: - Initializer
+
     // Injecting dependency of APIRequestProtocol to make it testable using mock data.
-    init(fetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol, productId: Int) {
+    init(fetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol, networkCheckManager: NetworkCheckManagerProtocol = NetworkCheckManager.shared, productId: Int) {
         self.productId = productId
         self.fetchProductDetailsUseCase = fetchProductDetailsUseCase
-        
+        self.networkCheckHandler = networkCheckManager
+
         self.fetchProductDetails()
         self.checkInternetConnection()
     }
 }
 
-//MARK: - Network Connection Update
+// MARK: - Network Connection Update
 private extension ProductDetailsViewModel {
     /// This method will check for internet connection status update. If internet is not available and productDetails are not available then only it will show error for no internet. Once internet is restored it will call fetchProductDetails() without any user action.
     func checkInternetConnection() {
@@ -52,7 +52,7 @@ private extension ProductDetailsViewModel {
                         if isInternetAvailable {
                             self.fetchProductDetails()
                         } else {
-                            self.state = .errorLoading(APIErrors.noInternet.failureReason!)
+                            self.state = .errorLoading(Constants.Errors.noInternetAvailable)
                         }
                     }
                 }
@@ -61,7 +61,7 @@ private extension ProductDetailsViewModel {
     }
 }
 
-//MARK: - API Call
+// MARK: - API Call
 extension ProductDetailsViewModel {
     /// Fetches product details with productId.
     func fetchProductDetails() {
@@ -80,6 +80,6 @@ extension ProductDetailsViewModel {
                 self.state = .dataLoaded
             }
             .store(in: &cancellables)
-            
+
     }
 }

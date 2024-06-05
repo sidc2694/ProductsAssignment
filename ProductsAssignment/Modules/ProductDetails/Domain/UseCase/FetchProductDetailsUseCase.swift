@@ -15,11 +15,11 @@ protocol FetchProductDetailsUseCaseProtocol {
 class FetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol {
     private let repository: ProductDetailsRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
-    
+
     init(repository: ProductDetailsRepositoryProtocol) {
         self.repository = repository
     }
-    
+
     func execute(productId: Int) -> Future<ProductDetails, APIErrors> {
         return Future<ProductDetails, APIErrors> { promise in
             self.repository.getProductList(productId: productId)

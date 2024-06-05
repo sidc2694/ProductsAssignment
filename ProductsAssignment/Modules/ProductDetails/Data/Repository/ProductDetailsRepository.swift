@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class ProductDetailsRepository: ProductDetailsRepositoryProtocol {
-    
+
     private let apiRequestManager: APIRequestProtocol
     private var cancellables = Set<AnyCancellable>()
     // MARK: - Initializer
@@ -17,7 +17,7 @@ class ProductDetailsRepository: ProductDetailsRepositoryProtocol {
     init(apiRequestManager: APIRequestProtocol = APIManager.shared) {
         self.apiRequestManager = apiRequestManager
     }
-    
+
     func getProductList(productId: Int) -> Future<ProductDetails, APIErrors> {
         return Future<ProductDetails, APIErrors> { promise in
             self.apiRequestManager.request(type: ProductDetailsEntity.self, module: Modules.productDetails(productId: productId))
@@ -34,7 +34,7 @@ class ProductDetailsRepository: ProductDetailsRepositoryProtocol {
                 .store(in: &self.cancellables)
         }
     }
-    
+
     private func createProductDetailsForDomain(details: ProductDetailsEntity) -> ProductDetails {
         ProductDetails(
             productId: details.productId,

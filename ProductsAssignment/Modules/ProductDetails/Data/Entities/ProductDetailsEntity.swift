@@ -15,7 +15,7 @@ struct ProductDetailsEntity: Codable {
     let price: Double?
     let discountPercentage: Double?
     let stock: Int?
-    
+
     enum CodingKeys: String, CodingKey {
 
         case productId = "id"
@@ -25,9 +25,9 @@ struct ProductDetailsEntity: Codable {
         case price = "price"
         case discountPercentage = "discountPercentage"
         case stock = "stock"
-        
+
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         productId = try values.decodeIfPresent(Int.self, forKey: .productId)

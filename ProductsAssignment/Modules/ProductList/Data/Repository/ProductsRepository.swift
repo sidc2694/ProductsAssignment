@@ -9,16 +9,16 @@ import Foundation
 import Combine
 
 class ProductsRepository: ProductsRepositoryProtocol {
-    
+
     private let apiRequestManager: APIRequestProtocol
     private var cancellables = Set<AnyCancellable>()
-    
+
     // MARK: - Initializer
     // Injecting dependency of APIRequestProtocol to make it testable using mock data.
     init(apiRequestManager: APIRequestProtocol = APIManager.shared) {
         self.apiRequestManager = apiRequestManager
     }
-    
+
     func getProductList(request: ProductsRequest) -> Future<ProductList, APIErrors> {
         return Future<ProductList, APIErrors> { promise in
             self.apiRequestManager.request(type: ProductListEntity.self, module: Modules.products(request))
@@ -42,12 +42,11 @@ class ProductsRepository: ProductsRepositoryProtocol {
                 .store(in: &self.cancellables)
         }
     }
-    
+
     private func createProductDataForDomain(productEntity: ProductEntity) -> Product {
         Product(
             productId: productEntity.productId,
             title: productEntity.title,
-            description: productEntity.description,
             price: productEntity.price,
             discountPercentage: productEntity.discountPercentage,
             thumbnail: productEntity.thumbnail)

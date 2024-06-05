@@ -9,22 +9,22 @@ import Foundation
 
 enum Constants {
     static let applicationName: String = "Products"
-    
+
     enum ScreenTitles {
         static let products = "Products"
         static let productDetails = "Product Details"
     }
-    
+
     enum Labels {
         static let description = "Description"
         static let stock = "%d in a stock"
-        static let ok = "OK"
+        static let okForAlert = "OK"
     }
-    
+
     enum Images {
         static let backImage = "arrow.left"
     }
-    
+
     enum Errors {
         static let invalidUrl: String = "Webservice url is invalid"
         static let invalidBody: String = "Request body is invalid"
@@ -35,5 +35,5 @@ enum Constants {
         static let noInternetAvailable: String = "Internet connection is not available. Please connect to internet."
         static let noDataFound: String = "No data found"
     }
-    
+
 }

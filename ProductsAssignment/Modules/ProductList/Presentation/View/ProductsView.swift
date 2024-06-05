@@ -10,14 +10,14 @@ import SwiftUI
 struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
     @EnvironmentObject private var coordinator: AppCoordinator
     @StateObject private var viewModel: ViewModel
-    
+
     /// Custom initializer to inject view model dependecy
     /// - Parameters:
     ///   - productsScreenViewModel: Injecting dependency of ProductsViewModelProtocol type to make it loosely coupled with view model class and expose only those methods which are relevant for this view.
     init(productsScreenViewModel: ViewModel) {
         _viewModel = StateObject(wrappedValue: productsScreenViewModel)
     }
-    
+
     var body: some View {
         switch viewModel.state {
         case .startLoading:

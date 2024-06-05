@@ -16,39 +16,39 @@ enum ProductsViewModelEvents {
 }
 
 final class ProductsViewModel: ProductsViewModelProtocol {
-    let networkCheckHandler = NetworkCheckManager.shared
+    private var networkCheckHandler: NetworkCheckManagerProtocol
     private(set) var productList: [Product] = []
     @Published var showingAlert = false
     @Published private(set) var alertMessage: String = ""
-    
+
     // View will know only about the action it needs to perform and not the condition because of which that action is performed so adding this state property whch will notify view of doing certain events based on the business logic written in view model.
     @Published private(set) var state: ProductsViewModelEvents = .startLoading
-    
+
     private let fetchProductListUseCase: FetchProductListUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
     private var totalProducts = 0
     private var errorMessage: String!
-    
+
     // Sets true when fetching product list is in progress.
     private var fetchingProducts: Bool = false
-    
-    //MARK: - Initializer
-    init(fetchProductListUseCase: FetchProductListUseCaseProtocol) {
+
+    // MARK: - Initializer
+    init(fetchProductListUseCase: FetchProductListUseCaseProtocol, networkCheckManager: NetworkCheckManagerProtocol = NetworkCheckManager.shared) {
         self.fetchProductListUseCase = fetchProductListUseCase
+        self.networkCheckHandler = networkCheckManager
         self.checkInternetConnection()
     }
-    
+
     func createProductCellData(product: Product) -> ProductCell {
         return ProductCell(
             thumbnailUrl: product.thumbnailUrl,
             title: product.title,
-            description: product.description,
             price: product.price,
             finalPrice: product.finalPrice)
     }
 }
 
-//MARK: - Network Connection Update
+// MARK: - Network Connection Update
 private extension ProductsViewModel {
     /// This method will check for internet connection status update. If internet is not available and productList array is also empty then only it will show error for no internet. Once internet is restored it will call fetchProductList() without any user action.
     func checkInternetConnection() {
@@ -60,17 +60,16 @@ private extension ProductsViewModel {
                         if isInternetAvailable && !self.fetchingProducts {
                             self.fetchProductList()
                         } else {
-                            self.state = .errorLoading(APIErrors.noInternet.failureReason!)
+                            self.state = .errorLoading(Constants.Errors.noInternetAvailable)
                         }
                     }
                 }
             }
-            
         }
     }
 }
 
-//MARK: - PAGINATION
+// MARK: - PAGINATION
 extension ProductsViewModel {
     /// Loads next batch of data when productList's second last element appears and if all the products are not loaded.
     /// - Parameter item: Product type for checking if it is second last element.
@@ -82,7 +81,7 @@ extension ProductsViewModel {
     }
 }
 
-//MARK: - API Call
+// MARK: - API Call
 extension ProductsViewModel {
     /// Fetches products with request parameters limit and skip. Limit indicates number items to fetch at a time and skip indicates the offset from which items needs to be fetched.
     func fetchProductList() {
@@ -104,7 +103,7 @@ extension ProductsViewModel {
             }
             .store(in: &cancellables)
     }
-    
+
     private func handleSuccess(productList: ProductList) {
         self.totalProducts = productList.total
         self.productList.append(contentsOf: productList.productList)
@@ -114,7 +113,7 @@ extension ProductsViewModel {
             self.state = .dataLoaded
         }
     }
-    
+
     private func handleFailure(apiErrors: APIErrors) {
         if self.productList.isEmpty {
             self.errorMessage = apiErrors.failureReason

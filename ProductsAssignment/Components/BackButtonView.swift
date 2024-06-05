@@ -14,13 +14,13 @@ struct BackButtonView: View {
     var body: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
-        }) {
+        }, label: {
             HStack(spacing: 0) {
                 Image(systemName: Constants.Images.backImage)
                     .font(.title2)
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
             } //: HStack
-        }
+        })
     }
 }
 
