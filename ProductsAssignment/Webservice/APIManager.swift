@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 // MARK: - APIManager
-final class APIManager: APIRequestProtocol {
+final class APIManager: NSObject, APIRequestProtocol {
     static let shared = APIManager()
 
     private var networkCheckHandler: NetworkCheckManagerProtocol
@@ -35,10 +35,11 @@ final class APIManager: APIRequestProtocol {
             urlRequest.httpMethod = module.method.rawValue
             urlRequest.allHTTPHeaderFields = module.header
 
+            let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
             // Checks for internet connectivity before making webservice call
             guard self.networkCheckHandler.isInternetAvailable else { return promise(.failure(.noInternet)) }
 
-            URLSession.shared.dataTaskPublisher(for: urlRequest)
+            urlSession.dataTaskPublisher(for: urlRequest)
                 .receive(on: RunLoop.main)
                 .tryMap { (data, response) in
                     guard let responseCode = response as? HTTPURLResponse,
@@ -68,5 +69,18 @@ final class APIManager: APIRequestProtocol {
                 .store(in: &self.cancellables)
 
         }
+    }
+}
+
+extension APIManager: URLSessionDelegate {
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+            if let serverTrust = challenge.protectionSpace.serverTrust {
+                let credential = URLCredential(trust: serverTrust)
+                completionHandler(.useCredential, credential)
+                return
+            }
+        }
+        completionHandler(.performDefaultHandling, nil)
     }
 }

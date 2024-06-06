@@ -36,6 +36,10 @@
 		4F0924C42C0ECC270026DFD4 /* ProductDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F20C7D62C05E2CE0057CE4C /* ProductDetails.json */; };
 		4F0924C52C0ECC270026DFD4 /* ProductDetails_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F20C7D52C05E2CE0057CE4C /* ProductDetails_Failure.json */; };
 		4F0924CA2C1093270026DFD4 /* NetworkCheckManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0924C92C1093270026DFD4 /* NetworkCheckManagerProtocol.swift */; };
+		4F0924F02C11C0A70026DFD4 /* ProductDetails_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F20C7D52C05E2CE0057CE4C /* ProductDetails_Failure.json */; };
+		4F0924F12C11C0A70026DFD4 /* Products_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD927AF2C005BF20030D0AD /* Products_Failure.json */; };
+		4F0924F22C11C0A70026DFD4 /* ProductDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F20C7D62C05E2CE0057CE4C /* ProductDetails.json */; };
+		4F0924F32C11C0A70026DFD4 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD927662BFE629A0030D0AD /* Products.json */; };
 		4F20C7E12C05E3090057CE4C /* ProductDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F20C7E02C05E3090057CE4C /* ProductDetailsViewModelTest.swift */; };
 		4FC753222BFCAEC10005703D /* ProductsAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC753212BFCAEC10005703D /* ProductsAssignmentApp.swift */; };
 		4FC753262BFCAEC20005703D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC753252BFCAEC20005703D /* Assets.xcassets */; };
@@ -393,6 +397,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4F0924D72C11B0D10026DFD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4FC753152BFCAEC10005703D = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +411,7 @@
 				4FD927752BFF15DA0030D0AD /* ProductsAssignmentTests */,
 				4FD927B62C0078470030D0AD /* ProductAssignmentUITests */,
 				4FC7531F2BFCAEC10005703D /* Products */,
+				4F0924D72C11B0D10026DFD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -619,6 +631,8 @@
 				4FD927792BFF15DA0030D0AD /* PBXTargetDependency */,
 			);
 			name = ProductsAssignmentTests;
+			packageProductDependencies = (
+			);
 			productName = ProductsAssignmentTests;
 			productReference = 4FD927742BFF15DA0030D0AD /* ProductsAssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -714,6 +728,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0924F02C11C0A70026DFD4 /* ProductDetails_Failure.json in Resources */,
+				4F0924F12C11C0A70026DFD4 /* Products_Failure.json in Resources */,
+				4F0924F22C11C0A70026DFD4 /* ProductDetails.json in Resources */,
+				4F0924F32C11C0A70026DFD4 /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

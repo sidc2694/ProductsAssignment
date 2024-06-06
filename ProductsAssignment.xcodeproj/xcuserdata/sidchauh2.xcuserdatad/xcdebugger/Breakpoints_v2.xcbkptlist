@@ -183,22 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D78004EA-A330-4EC9-90C0-865ABD2B9462"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "fetchProductList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1DE489F9-D860-4048-AF57-E54CE323C3B9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -254,8 +238,8 @@
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "request(type:module:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -263,16 +247,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1588375F-9CE5-4F95-894F-EB78163A3C69"
+            uuid = "FCBD761B-F893-4127-B0FA-1AC0E3488ECE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductAssignmentUITests/SnapshotTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "SnapshotTest"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16DBD757-97A0-4B30-B020-E1AAD16C2E43"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(networkCheckManager:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "urlSession(_:didReceive:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

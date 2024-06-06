@@ -112,5 +112,5 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
 }
 
 #Preview {
-    ProductDetailsView(productDetailsScreenViewModel: ProductDetailsViewModel(fetchProductDetailsUseCase: FetchProductDetailsUseCase(repository: ProductDetailsRepository()), productId: 1))
+    ProductDetailsView(productDetailsScreenViewModel: ProductDetailsViewModel(fetchProductDetailsUseCase: FetchProductDetailsUseCase(repository: ProductDetailsRepository(apiRequestManager: MockAPIManager.shared)), productId: 1))
 }

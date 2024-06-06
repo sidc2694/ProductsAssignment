@@ -43,5 +43,5 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
 }
 
 #Preview {
-    ShowProductListView(viewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository())))
+    ShowProductListView(viewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))))
 }
