@@ -25,6 +25,9 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
                             .onTapGesture {
                                 coordinator.push(.productDetails(product.id))
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityAddTraits(.isButton)
+                            .accessibilityHint("Tap to navigate to product details screen.")
                             .listRowBackground(Color.orange.opacity(0.15))
                     }
                 } //: List

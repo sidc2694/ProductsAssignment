@@ -48,6 +48,8 @@ struct ProductCellView: View {
                         .fontWeight(.light)
                         .strikethrough()
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Actual price is \(productCell.price ?? 0.0, specifier: "%.2f") and Discounted price is \(productCell.finalPrice ?? 0.0, specifier: "%.2f")")
                 Spacer()
             } //: VStack
         } //: HStack

@@ -6,11 +6,11 @@
 //
 
 import XCTest
-import ProductsAssignment
+@testable import ProductsAssignment
 
 final class ScreenNavigationTest: XCTestCase {
 
-     var app: XCUIApplication!
+    var app: XCUIApplication!
     
     override func setUp() {
         app = XCUIApplication()

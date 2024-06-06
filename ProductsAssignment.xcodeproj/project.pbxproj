@@ -637,6 +637,8 @@
 				4FD927BC2C0078470030D0AD /* PBXTargetDependency */,
 			);
 			name = ProductAssignmentUITests;
+			packageProductDependencies = (
+			);
 			productName = ProductAssignmentUITests;
 			productReference = 4FD927B52C0078470030D0AD /* ProductAssignmentUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";

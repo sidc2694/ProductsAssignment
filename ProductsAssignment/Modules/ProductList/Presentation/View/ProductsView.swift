@@ -34,6 +34,9 @@ struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol 
     }
 }
 
-#Preview {
-    ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository())))
+struct ProductsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))))
+            .environmentObject(AppCoordinator(path: NavigationPath()))
+    }
 }
