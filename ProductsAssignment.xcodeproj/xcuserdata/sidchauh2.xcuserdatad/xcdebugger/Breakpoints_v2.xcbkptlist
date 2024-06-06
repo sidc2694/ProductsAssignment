@@ -231,22 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86C78399-648B-446C-897A-F0D6746A4075"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Webservice/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "request(type:module:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FCBD761B-F893-4127-B0FA-1AC0E3488ECE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -263,15 +247,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16DBD757-97A0-4B30-B020-E1AAD16C2E43"
+            uuid = "37CC7866-DF11-400F-B35B-021131C10149"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductsAssignment/Webservice/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "urlSession(_:didReceive:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>

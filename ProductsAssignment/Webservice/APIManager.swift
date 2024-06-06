@@ -74,13 +74,39 @@ final class APIManager: NSObject, APIRequestProtocol {
 
 extension APIManager: URLSessionDelegate {
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-            if let serverTrust = challenge.protectionSpace.serverTrust {
-                let credential = URLCredential(trust: serverTrust)
-                completionHandler(.useCredential, credential)
-                return
-            }
+        guard let serverTrust = challenge.protectionSpace.serverTrust else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
         }
-        completionHandler(.performDefaultHandling, nil)
+        let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)
+        let policy = NSMutableArray()
+        policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
+
+        let isServerTrusted = SecTrustEvaluateWithError(serverTrust, nil)
+
+        guard let cert = certificate else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+        let remoteCertificateData: NSData = SecCertificateCopyData(cert)
+
+        let pathTpCertificate = Bundle.main.path(forResource: "dummyjson", ofType: "cer")
+
+        guard let path = pathTpCertificate else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+        do {
+            let localCertificate: NSData = try NSData(contentsOfFile: path)
+            if isServerTrusted && remoteCertificateData.isEqual(to: localCertificate as Data) {
+                let _ = URLCredential(trust: serverTrust)
+                completionHandler(.useCredential, nil)
+            } else {
+                completionHandler(.cancelAuthenticationChallenge, nil)
+            }
+        } catch {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
     }
 }
