@@ -613,7 +613,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4F0924C82C1080FE0026DFD4 /* PBXTargetDependency */,
 			);
 			name = ProductsAssignment;
 			packageProductDependencies = (
@@ -696,7 +695,6 @@
 			);
 			mainGroup = 4FC753152BFCAEC10005703D;
 			packageReferences = (
-				4F0924C62C1080810026DFD4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				4F0924FE2C13017E0026DFD4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 4FC7531F2BFCAEC10005703D /* Products */;
@@ -818,10 +816,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F0924C82C1080FE0026DFD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 4F0924C72C1080FE0026DFD4 /* SwiftLintBuildToolPlugin */;
-		};
 		4FD927792BFF15DA0030D0AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4FC7531D2BFCAEC10005703D /* ProductsAssignment */;
@@ -1146,14 +1140,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4F0924C62C1080810026DFD4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.55.1;
-			};
-		};
 		4F0924FE2C13017E0026DFD4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1165,11 +1151,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4F0924C72C1080FE0026DFD4 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4F0924C62C1080810026DFD4 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
 		4F0925022C1302C00026DFD4 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4F0924FE2C13017E0026DFD4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
