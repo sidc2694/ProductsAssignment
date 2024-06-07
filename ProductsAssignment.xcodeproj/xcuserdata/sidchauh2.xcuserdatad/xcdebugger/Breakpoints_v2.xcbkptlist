@@ -276,5 +276,132 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C530A775-7186-4A48-BDE5-01F1A6508718"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductsAssignment/Webservice/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "urlSession(_:didReceive:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "217D3FCD-25E5-41D0-BBD3-8E38C2ADC801"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "trustServer(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "trustServer(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E - 20a0d8a1391a0cd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSURLAuthenticationChallenge.trustServer(completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E - 20a0d8a1391a0cd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSURLAuthenticationChallenge.trustServer(completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
