@@ -8,23 +8,23 @@
 import Foundation
 
 struct ProductList {
-    let productList: [Product]!
-    let total: Int!
+    let productList: [Product]
+    let total: Int
 }
 
 struct Product: Identifiable, Hashable {
-    let productId: Int!
+    let productId: Int
     let title: String?
     let price: Double?
     let discountPercentage: Double?
     let thumbnail: String?
     var thumbnailUrl: URL?
-    let finalPrice: Double!
+    let finalPrice: Double
     var id: Int {
         productId
     }
 
-    init(productId: Int!, title: String?, price: Double?, discountPercentage: Double?, thumbnail: String?) {
+    init(productId: Int, title: String?, price: Double?, discountPercentage: Double?, thumbnail: String?) {
         self.productId = productId
         self.title = title
         self.price = price

@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProductEntity: Codable {
-    let productId: Int!
+    let productId: Int
     let title: String?
     let description: String?
     let price: Double?
@@ -27,7 +27,7 @@ struct ProductEntity: Codable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        productId = try values.decodeIfPresent(Int.self, forKey: .productId)
+        productId = try values.decodeIfPresent(Int.self, forKey: .productId) ?? 0
         title = try values.decodeIfPresent(String.self, forKey: .title)
         description = try values.decodeIfPresent(String.self, forKey: .description)
         price = try values.decodeIfPresent(Double.self, forKey: .price)
@@ -38,7 +38,7 @@ struct ProductEntity: Codable {
 
 struct ProductListEntity: Codable {
     let products: [ProductEntity]?
-    let total: Int!
-    let skip: Int!
-    let limit: Int!
+    let total: Int
+    let skip: Int
+    let limit: Int
 }

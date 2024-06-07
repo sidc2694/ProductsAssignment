@@ -9,7 +9,7 @@ import Foundation
 
 // ProductDetailsViewModelOutputProtocol and ProductDetailsViewModelInputProtocol contains only those methods and variables of ProductDetailsViewModel which needs to be exposed to the ProductDetailScreen.
 protocol ProductDetailsViewModelOutputProtocol: ObservableObject {
-    var productDetails: ProductDetails! { get }
+    var productDetails: ProductDetails? { get }
     var state: ProductDetailsViewModelEvents { get }
 }
 

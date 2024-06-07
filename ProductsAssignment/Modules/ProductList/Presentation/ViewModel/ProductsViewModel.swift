@@ -27,7 +27,6 @@ final class ProductsViewModel: ProductsViewModelProtocol {
     private let fetchProductListUseCase: FetchProductListUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
     private var totalProducts = 0
-    private var errorMessage: String!
 
     // Sets true when fetching product list is in progress.
     private var fetchingProducts: Bool = false
@@ -116,8 +115,7 @@ extension ProductsViewModel {
 
     private func handleFailure(apiErrors: APIErrors) {
         if self.productList.isEmpty {
-            self.errorMessage = apiErrors.failureReason
-            self.state = .errorLoading(self.errorMessage)
+            self.state = .errorLoading(apiErrors.failureReason ?? Constants.Errors.somethingWentWrong)
         } else {
             self.showingAlert = true
             self.alertMessage = apiErrors.failureReason ?? ""

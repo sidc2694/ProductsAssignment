@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProductDetails {
-    let productId: Int!
+    let productId: Int
     let title: String?
     let description: String?
     let images: [String]?
@@ -17,7 +17,7 @@ struct ProductDetails {
     let stock: Int?
     let finalPrice: Double?
 
-    init(productId: Int!, title: String?, description: String?, images: [String]?, price: Double?, discountPercentage: Double?, stock: Int?) {
+    init(productId: Int, title: String?, description: String?, images: [String]?, price: Double?, discountPercentage: Double?, stock: Int?) {
         self.productId = productId
         self.title = title
         self.description = description

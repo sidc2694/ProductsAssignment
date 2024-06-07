@@ -78,13 +78,13 @@ extension APIManager: URLSessionDelegate {
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
         }
-        let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)
+        let certificate = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate]
         let policy = NSMutableArray()
         policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
 
         let isServerTrusted = SecTrustEvaluateWithError(serverTrust, nil)
 
-        guard let cert = certificate else {
+        guard let cert = certificate?.first else {
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
         }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductCellView: View {
 
@@ -17,18 +18,16 @@ struct ProductCellView: View {
 
     var body: some View {
         HStack(spacing: 15) {
-            AsyncImage(url: productCell.thumbnailUrl, content: { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 150)
-                    .background(Color.black.opacity(0.1))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .shadow(color: .black.opacity(0.3), radius: 10)
-            }, placeholder: {
-                ProgressView()
-            }) //: AsyncImage
-            .frame(width: 150, height: 150)
+            KFImage(productCell.thumbnailUrl)
+                .placeholder {
+                    ProgressView()
+                }
+                .resizable()
+                .scaledToFill()
+                .frame(width: 150, height: 150)
+                .background(Color.black.opacity(0.1))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .shadow(color: .black.opacity(0.3), radius: 10)
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(productCell.title ?? "")
@@ -43,7 +42,7 @@ struct ProductCellView: View {
                         .foregroundStyle(.red)
 
                     Text("$\(productCell.price ?? 0.0, specifier: "%.2f")")
-                        .foregroundStyle(.darkGray)
+                        .foregroundStyle(.darkGrayApp)
                         .font(.system(size: 13))
                         .fontWeight(.light)
                         .strikethrough()
@@ -55,6 +54,7 @@ struct ProductCellView: View {
         } //: HStack
         .frame(height: 150)
         .listRowInsets(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15))
+        .contentShape(Rectangle())
     }
 }
 

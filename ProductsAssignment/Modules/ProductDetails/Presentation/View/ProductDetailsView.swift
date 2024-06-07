@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewModelProtocol {
     @StateObject private var viewModel: ViewModel
@@ -39,20 +40,19 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                 BackgroundView()
                 VStack {
                     VStack(alignment: .leading, content: {
-                        Text(viewModel.productDetails.title ?? "")
+                        Text(viewModel.productDetails?.title ?? "")
                             .padding()
                             .font(.system(size: 25))
                             .bold()
 
                         TabView {
-                            ForEach(viewModel.productDetails.images ?? [], id: \.self) { item in
-                                AsyncImage(url: URL(string: item), content: { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFit()
-                                }, placeholder: {
-                                    ProgressView()
-                                })
+                            ForEach(viewModel.productDetails?.images ?? [], id: \.self) { item in
+                                KFImage(URL(string: item))
+                                    .placeholder {
+                                        ProgressView()
+                                    }
+                                    .resizable()
+                                    .scaledToFit()
                             }
                         } //: Tabview
                         .tabViewStyle(PageTabViewStyle())
@@ -62,18 +62,18 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                         HStack {
                             HStack(spacing: -10) {
                                 HStack(alignment: .bottom) {
-                                    Text("$\(viewModel.productDetails.finalPrice ?? 0.0, specifier: "%.2f")")
+                                    Text("$\(viewModel.productDetails?.finalPrice ?? 0.0, specifier: "%.2f")")
                                         .font(.system(size: 15))
                                         .fontWeight(.semibold)
                                         .foregroundStyle(.red)
 
-                                    Text("$\(viewModel.productDetails.price ?? 0.0, specifier: "%.2f")")
+                                    Text("$\(viewModel.productDetails?.price ?? 0.0, specifier: "%.2f")")
                                         .font(.system(size: 13))
                                         .fontWeight(.light)
                                         .strikethrough()
                                 }
                                 Spacer()
-                                Text(String(format: Constants.Labels.stock, viewModel.productDetails.stock ?? 0))
+                                Text(String(format: Constants.Labels.stock, viewModel.productDetails?.stock ?? 0))
                                     .font(.system(size: 15))
                                     .fontWeight(.semibold)
                             }
@@ -88,8 +88,8 @@ struct ProductDetailsView<ViewModel>: View where ViewModel: ProductDetailsViewMo
                                 .padding()
                                 .padding(.top, -15)
 
-                            Text(viewModel.productDetails.description ?? "")
-                                .foregroundStyle(.darkGray)
+                            Text(viewModel.productDetails?.description ?? "")
+                                .foregroundStyle(.darkGrayApp)
                                 .font(.system(size: 13))
                                 .fontWeight(.light)
                                 .padding()

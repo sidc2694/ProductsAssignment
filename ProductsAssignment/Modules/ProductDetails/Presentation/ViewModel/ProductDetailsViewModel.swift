@@ -17,7 +17,7 @@ enum ProductDetailsViewModelEvents {
 
 final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     private var networkCheckHandler: NetworkCheckManagerProtocol
-    private(set) var productDetails: ProductDetails!
+    private(set) var productDetails: ProductDetails?
 
     // View will know only about the action it needs to perform and not the condition because of which that action is performed so adding this state property whch will notify view of doing certain events based on the business logic written in view model.
     @Published private(set) var state: ProductDetailsViewModelEvents = .startLoading
@@ -25,7 +25,6 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     private var productId: Int
     private let fetchProductDetailsUseCase: FetchProductDetailsUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
-    private var errorMessage: String!
 
     // MARK: - Initializer
 
@@ -70,8 +69,7 @@ extension ProductDetailsViewModel {
                 guard let self else { return }
                 switch completion {
                 case .failure(let apiErrors):
-                    self.errorMessage = apiErrors.failureReason
-                    self.state = .errorLoading(self.errorMessage)
+                    self.state = .errorLoading(apiErrors.failureReason ?? Constants.Errors.somethingWentWrong)
                 default: break
                 }
             } receiveValue: { [weak self] productDetails in
