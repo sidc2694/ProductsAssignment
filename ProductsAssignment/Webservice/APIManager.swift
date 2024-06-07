@@ -35,7 +35,7 @@ final class APIManager: NSObject, APIRequestProtocol {
             urlRequest.httpMethod = module.method.rawValue
             urlRequest.allHTTPHeaderFields = module.header
 
-            let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+            let urlSession = URLSession(configuration: .default, delegate: AppURLSessionDelegate(), delegateQueue: nil)
             // Checks for internet connectivity before making webservice call
             guard self.networkCheckHandler.isInternetAvailable else { return promise(.failure(.noInternet)) }
 
@@ -72,41 +72,15 @@ final class APIManager: NSObject, APIRequestProtocol {
     }
 }
 
-extension APIManager: URLSessionDelegate {
+final class AppURLSessionDelegate: NSObject, URLSessionDelegate {
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        guard let serverTrust = challenge.protectionSpace.serverTrust else {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
-        }
-        let certificate = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate]
-        let policy = NSMutableArray()
-        policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
-
-        let isServerTrusted = SecTrustEvaluateWithError(serverTrust, nil)
-
-        guard let cert = certificate?.first else {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
-        }
-        let remoteCertificateData: NSData = SecCertificateCopyData(cert)
-
-        let pathTpCertificate = Bundle.main.path(forResource: "dummyjson", ofType: "cer")
-
-        guard let path = pathTpCertificate else {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
-        }
-        do {
-            let localCertificate: NSData = try NSData(contentsOfFile: path)
-            if isServerTrusted && remoteCertificateData.isEqual(to: localCertificate as Data) {
-                let _ = URLCredential(trust: serverTrust)
-                completionHandler(.useCredential, nil)
-            } else {
-                completionHandler(.cancelAuthenticationChallenge, nil)
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+            if let serverTrust = challenge.protectionSpace.serverTrust {
+                let credential = URLCredential(trust: serverTrust)
+                completionHandler(.useCredential, credential)
+                return
             }
-        } catch {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
         }
+        completionHandler(.performDefaultHandling, nil)
     }
 }

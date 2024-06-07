@@ -40,7 +40,6 @@
 		4F0924F12C11C0A70026DFD4 /* Products_Failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD927AF2C005BF20030D0AD /* Products_Failure.json */; };
 		4F0924F22C11C0A70026DFD4 /* ProductDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F20C7D62C05E2CE0057CE4C /* ProductDetails.json */; };
 		4F0924F32C11C0A70026DFD4 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD927662BFE629A0030D0AD /* Products.json */; };
-		4F0924FD2C11F8780026DFD4 /* dummyjson.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4F0924FC2C11F8780026DFD4 /* dummyjson.cer */; };
 		4F0925032C1302C00026DFD4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F0925022C1302C00026DFD4 /* Kingfisher */; };
 		4F20C7E12C05E3090057CE4C /* ProductDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F20C7E02C05E3090057CE4C /* ProductDetailsViewModelTest.swift */; };
 		4FC753222BFCAEC10005703D /* ProductsAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC753212BFCAEC10005703D /* ProductsAssignmentApp.swift */; };
@@ -111,7 +110,6 @@
 		4F0924852C0DE2EB0026DFD4 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4F0924912C0DF8DB0026DFD4 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
 		4F0924C92C1093270026DFD4 /* NetworkCheckManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckManagerProtocol.swift; sourceTree = "<group>"; };
-		4F0924FC2C11F8780026DFD4 /* dummyjson.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummyjson.cer; sourceTree = "<group>"; };
 		4F20C7D52C05E2CE0057CE4C /* ProductDetails_Failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductDetails_Failure.json; sourceTree = "<group>"; };
 		4F20C7D62C05E2CE0057CE4C /* ProductDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductDetails.json; sourceTree = "<group>"; };
 		4F20C7E02C05E3090057CE4C /* ProductDetailsViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModelTest.swift; sourceTree = "<group>"; };
@@ -408,14 +406,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4F0924FA2C11F5530026DFD4 /* SSLCertificate */ = {
-			isa = PBXGroup;
-			children = (
-				4F0924FC2C11F8780026DFD4 /* dummyjson.cer */,
-			);
-			path = SSLCertificate;
-			sourceTree = "<group>";
-		};
 		4FC753152BFCAEC10005703D = {
 			isa = PBXGroup;
 			children = (
@@ -440,7 +430,6 @@
 		4FC753202BFCAEC10005703D /* ProductsAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				4F0924FA2C11F5530026DFD4 /* SSLCertificate */,
 				4FD9276F2BFF0EEA0030D0AD /* Info.plist */,
 				4FD9275E2BFE0DF30030D0AD /* App */,
 				4FD927572BFDEC060030D0AD /* Coordinator */,
@@ -723,7 +712,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0924FD2C11F8780026DFD4 /* dummyjson.cer in Resources */,
 				4FC753292BFCAEC20005703D /* Preview Assets.xcassets in Resources */,
 				4F0924C22C0ECC270026DFD4 /* Products_Failure.json in Resources */,
 				4F0924C32C0ECC270026DFD4 /* Products.json in Resources */,
@@ -974,6 +962,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProductsAssignment/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Products;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1007,6 +996,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProductsAssignment/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Products;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
