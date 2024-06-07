@@ -42,6 +42,7 @@
 		4F0924F32C11C0A70026DFD4 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FD927662BFE629A0030D0AD /* Products.json */; };
 		4F0925032C1302C00026DFD4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F0925022C1302C00026DFD4 /* Kingfisher */; };
 		4F20C7E12C05E3090057CE4C /* ProductDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F20C7E02C05E3090057CE4C /* ProductDetailsViewModelTest.swift */; };
+		4FB56DF22C133AD000DC5DF3 /* ImageDownloaderAuthenticationChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56DF12C133AD000DC5DF3 /* ImageDownloaderAuthenticationChallenge.swift */; };
 		4FC753222BFCAEC10005703D /* ProductsAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC753212BFCAEC10005703D /* ProductsAssignmentApp.swift */; };
 		4FC753262BFCAEC20005703D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC753252BFCAEC20005703D /* Assets.xcassets */; };
 		4FC753292BFCAEC20005703D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC753282BFCAEC20005703D /* Preview Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		4F20C7D52C05E2CE0057CE4C /* ProductDetails_Failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductDetails_Failure.json; sourceTree = "<group>"; };
 		4F20C7D62C05E2CE0057CE4C /* ProductDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductDetails.json; sourceTree = "<group>"; };
 		4F20C7E02C05E3090057CE4C /* ProductDetailsViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModelTest.swift; sourceTree = "<group>"; };
+		4FB56DF12C133AD000DC5DF3 /* ImageDownloaderAuthenticationChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderAuthenticationChallenge.swift; sourceTree = "<group>"; };
 		4FC7531E2BFCAEC10005703D /* ProductsAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductsAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC753212BFCAEC10005703D /* ProductsAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAssignmentApp.swift; sourceTree = "<group>"; };
 		4FC753252BFCAEC20005703D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 			children = (
 				4FC753392BFCAFC10005703D /* Extensions */,
 				4FD927C52C00C7A40030D0AD /* NetworkCheckManager */,
+				4FB56DF12C133AD000DC5DF3 /* ImageDownloaderAuthenticationChallenge.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				4F0924702C0DE0C80026DFD4 /* ProductList.swift in Sources */,
 				4F0924742C0DE0C80026DFD4 /* ProductCellView.swift in Sources */,
 				4FD927592BFDEC1C0030D0AD /* AppCoordinator.swift in Sources */,
+				4FB56DF22C133AD000DC5DF3 /* ImageDownloaderAuthenticationChallenge.swift in Sources */,
 				4F09246F2C0DE0C80026DFD4 /* ProductCell.swift in Sources */,
 				4F0924762C0DE0C80026DFD4 /* ProductsView.swift in Sources */,
 				4F0924732C0DE0C80026DFD4 /* FetchProductListUseCase.swift in Sources */,

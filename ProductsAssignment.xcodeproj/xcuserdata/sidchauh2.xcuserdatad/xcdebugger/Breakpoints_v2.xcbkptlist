@@ -231,33 +231,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "278B2A1D-47CA-439F-B6DD-C02F9E566B08"
+            uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductList/Presentation/View/ChildViews/ShowProductListView.swift"
+            filePath = "ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3752CB26-B20E-449D-A164-A2C4460BEE28"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Webservice/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "urlSession(_:didReceive:completionHandler:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "fetchProductDetails()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C - f43e169379283c46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ProductsAssignment.ProductDetails) -&gt; () in ProductsAssignment.ProductDetailsViewModel.fetchProductDetails() -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C - f43e169379283aad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ProductsAssignment.ProductDetails) -&gt; () in ProductsAssignment.ProductDetailsViewModel.fetchProductDetails() -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "752">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
