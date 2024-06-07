@@ -1,4 +1,0 @@
-disabled_rules:
-   - line_length
-   - redundant_discardable_let
-   - static_over_final_class
