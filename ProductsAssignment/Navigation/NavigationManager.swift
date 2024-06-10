@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  AppNavigationManager.swift
 //  ProductsAssignment
 //
 //  Created by Siddharth Chauhan on 22/05/24.
@@ -25,7 +25,7 @@ enum Page: Hashable {
     }
 }
 
-final class AppCoordinator: ObservableObject, CoordinatorProtocol {
+final class NavigationManager: ObservableObject, NavigationManagerProtocol {
 
     @Published var path: NavigationPath
 

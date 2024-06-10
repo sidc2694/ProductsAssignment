@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: AppCoordinator
+    @EnvironmentObject private var coordinator: NavigationManager
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
@@ -44,5 +44,5 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
 
 #Preview {
     ShowProductListView(viewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))))
-        .environmentObject(AppCoordinator(path: NavigationPath()))
+        .environmentObject(NavigationManager(path: NavigationPath()))
 }

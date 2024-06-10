@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: AppCoordinator
+    @EnvironmentObject private var coordinator: NavigationManager
     @StateObject private var viewModel: ViewModel
 
     /// Custom initializer to inject view model dependecy
@@ -36,5 +36,5 @@ struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol 
 
 #Preview {
     ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))))
-        .environmentObject(AppCoordinator(path: NavigationPath()))
+        .environmentObject(NavigationManager(path: NavigationPath()))
 }

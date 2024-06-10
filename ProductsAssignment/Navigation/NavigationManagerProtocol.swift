@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CoordinatorProtocol {
+protocol NavigationManagerProtocol {
     func push(_ page: Page)
     func pop()
     func popToRoot()
