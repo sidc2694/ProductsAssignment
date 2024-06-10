@@ -12,9 +12,9 @@ import Combine
 final class FetchProductListUseCaseTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
-    
+
     func testSuccessFetchProductsUseCaseMock() {
-        let useCase = FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))
+        let useCase = MockFetchProductListUseCase(isSuccessResponse: true)
         useCase.execute(request: ProductsRequest(limit: 30, skip: 0))
             .sink { completion in
                 switch completion {
@@ -27,5 +27,19 @@ final class FetchProductListUseCaseTest: XCTestCase {
             }
             .store(in: &cancellables)
     }
-
+    
+    func testFailureFetchProductsUseCaseMock() {
+        let useCase = MockFetchProductListUseCase(isSuccessResponse: false)
+        useCase.execute(request: ProductsRequest(limit: 30, skip: 0))
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    XCTAssert(true)
+                default: break
+                }
+            } receiveValue: { productList in
+                XCTFail()
+            }
+            .store(in: &cancellables)
+    }
 }

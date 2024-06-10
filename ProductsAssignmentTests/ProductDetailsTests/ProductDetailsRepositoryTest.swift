@@ -12,9 +12,9 @@ import Combine
 final class ProductDetailsRepositoryTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
-    
+
     func testSuccessProductDetailsRepositoryMock() {
-        let repository = ProductDetailsRepository(apiRequestManager: MockAPIManager.shared)
+        let repository = MockProductDetailsRepository(isSuccessResponse: true)
         repository.getProductList(productId: 1)
             .sink { completion in
                 switch completion {
@@ -27,5 +27,19 @@ final class ProductDetailsRepositoryTest: XCTestCase {
             }
             .store(in: &self.cancellables)
     }
-
+    
+    func testFailureProductDetailsRepositoryMock() {
+        let repository = MockProductDetailsRepository(isSuccessResponse: false)
+        repository.getProductList(productId: 1)
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    XCTAssert(true)
+                default: break
+                }
+            } receiveValue: { productDetails in
+                XCTFail()
+            }
+            .store(in: &self.cancellables)
+    }
 }
