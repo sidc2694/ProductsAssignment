@@ -17,7 +17,7 @@ final class ProductDetailsViewModelTest: XCTestCase {
         sut = nil
     }
     
-    func testSuccessFetchProductDetailsMock() {
+    func testSuccessFetchProductDetails() {
         let useCase = FetchProductDetailsUseCase(repository: ProductDetailsRepository(apiRequestManager: MockAPIManager.shared))
         sut = ProductDetailsViewModel(fetchProductDetailsUseCase: useCase, productId: 1)
         sut.fetchProductDetails()
@@ -32,7 +32,7 @@ final class ProductDetailsViewModelTest: XCTestCase {
         }
     }
     
-    func testFailureFetchProductDetailsMock() {
+    func testFailureFetchProductDetails() {
         let useCase = FetchProductDetailsUseCase(repository: ProductDetailsRepository(apiRequestManager: MockAPIManager(isCheckFailure: true)))
         sut = ProductDetailsViewModel(fetchProductDetailsUseCase: useCase, productId: 1)
         sut.fetchProductDetails()
@@ -42,6 +42,37 @@ final class ProductDetailsViewModelTest: XCTestCase {
             break
         case .errorLoading(let error):
             XCTAssertEqual(error, "Decoding of response failed")
+        case .dataLoaded:
+            XCTFail()
+            
+        }
+    }
+    
+    func testSuccessFetchProductDetailsMock() {
+        let useCase = MockFetchProductDetailsUseCase(isSuccessResponse: true)
+        sut = ProductDetailsViewModel(fetchProductDetailsUseCase: useCase, productId: 1)
+        sut.fetchProductDetails()
+        switch sut.state {
+        case .startLoading:
+            break
+        case .errorLoading(let error):
+            XCTFail("Error: \(error)")
+        case .dataLoaded:
+            XCTAssert(true)
+            
+        }
+    }
+    
+    func testFailureFetchProductDetailsMock() {
+        let useCase = MockFetchProductDetailsUseCase(isSuccessResponse: false)
+        sut = ProductDetailsViewModel(fetchProductDetailsUseCase: useCase, productId: 1)
+        sut.fetchProductDetails()
+        
+        switch sut.state {
+        case .startLoading:
+            break
+        case .errorLoading:
+            XCTAssert(true)
         case .dataLoaded:
             XCTFail()
             
