@@ -18,7 +18,7 @@ final class AppDIContainer {
         return FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: apiRequestManager))
     }()
 
-    func getProductDetailsViewModel() -> some (ProductsViewModelInputProtocol & ProductsViewModelOutputProtocol) {
+    func getProductListViewModel() -> some (ProductsViewModelInputProtocol & ProductsViewModelOutputProtocol) {
         return ProductsViewModel(fetchProductListUseCase: getProductListUseCase)
     }
 

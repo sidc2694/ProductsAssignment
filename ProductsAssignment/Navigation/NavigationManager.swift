@@ -51,7 +51,7 @@ final class NavigationManager: ObservableObject, NavigationManagerProtocol {
     func build(page: Page) -> some View {
         switch page {
         case .productList:
-            ProductsView(productsScreenViewModel: appDIContainer.getProductDetailsViewModel())
+            ProductsView(productsScreenViewModel: appDIContainer.getProductListViewModel())
         case .productDetails(let productId):
             ProductDetailsView(productDetailsScreenViewModel: appDIContainer.getProductDetailsViewModel(productId: productId))
         }
