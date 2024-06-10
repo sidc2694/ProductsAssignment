@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: NavigationManager
     @StateObject private var viewModel: ViewModel
+    private var navigateTo: NavigateTo
 
     /// Custom initializer to inject view model dependecy
     /// - Parameters:
     ///   - productsScreenViewModel: Injecting dependency of ProductsViewModelProtocol type to make it loosely coupled with view model class and expose only those methods which are relevant for this view.
-    init(productsScreenViewModel: ViewModel) {
+    init(productsScreenViewModel: ViewModel, navigateTo: NavigateTo) {
         _viewModel = StateObject(wrappedValue: productsScreenViewModel)
+        self.navigateTo = navigateTo
     }
 
     var body: some View {
@@ -28,13 +29,15 @@ struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol 
         case .errorLoading(let error):
             ErrorView(error: error)
         case .dataLoaded:
-            ShowProductListView(viewModel: viewModel)
-                .environmentObject(coordinator)
+            ShowProductListView(viewModel: viewModel, navigateTo: navigateTo)
         }
     }
 }
 
 #Preview {
-    ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))))
-        .environmentObject(NavigationManager(path: NavigationPath()))
+    ProductsView(productsScreenViewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))), navigateTo: NavigateTo(goToProductDetailsView: { id in }))
+}
+
+struct NavigateTo {
+    var goToProductDetailsView: (Int) -> Void
 }

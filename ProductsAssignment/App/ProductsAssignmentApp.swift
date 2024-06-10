@@ -11,7 +11,8 @@ import Kingfisher
 @main
 struct ProductsAssignmentApp: App {
     private let imageDownloaderAuthenticationChallenge = ImageDownloaderAuthenticationChallenge()
-
+    @StateObject private var coordinator = AppCoordinator(path: NavigationPath())
+    
     init() {
         ImageDownloader.default.authenticationChallengeResponder = imageDownloaderAuthenticationChallenge
     }
@@ -19,7 +20,15 @@ struct ProductsAssignmentApp: App {
     var body: some Scene {
         WindowGroup {
             let _ = NetworkCheckManager.shared
-            ContentView()
+            NavigationStack(path: $coordinator.path) {
+                coordinator.view()
+                    .navigationDestination(
+                        for: ProductsCoordinator.self
+                    ) { coordinator in
+                        coordinator.view()
+                    }
+            }
+            .environmentObject(coordinator)
         }
     }
 }

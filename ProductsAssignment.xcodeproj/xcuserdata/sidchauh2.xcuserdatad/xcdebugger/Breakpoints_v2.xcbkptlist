@@ -162,54 +162,53 @@
             endingLineNumber = "56"
             landmarkName = "checkInternetConnection()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "06442067-FACF-4868-A012-1168B5B934D2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "handleFailure(apiErrors:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1DE489F9-D860-4048-AF57-E54CE323C3B9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "fetchProductList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D7CC6FE6-B7F5-49A5-BE9B-55969EEBB43C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "fetchProductList()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "43474263-2642-485D-A636-5EFB4E5A5857 - 1c707aeb9a45c393"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in ProductsAssignment.ProductsViewModel.checkInternetConnection() -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "43474263-2642-485D-A636-5EFB4E5A5857 - bc080b89ca1f646a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in closure #1 (Swift.Bool) -&gt; () in ProductsAssignment.ProductsViewModel.checkInternetConnection() -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "43474263-2642-485D-A636-5EFB4E5A5857 - 55149a5a0886ecc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.Bool) -&gt; () in ProductsAssignment.ProductsViewModel.checkInternetConnection() -&gt; ()"
+                  moduleName = "ProductsAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductList/Presentation/ViewModel/ProductsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -226,181 +225,6 @@
             endingLineNumber = "15"
             landmarkName = "SnapshotTest"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "fetchProductDetails()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C - f43e169379283c46"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ProductsAssignment.ProductDetails) -&gt; () in ProductsAssignment.ProductDetailsViewModel.fetchProductDetails() -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "6A1E56F8-BD57-42BD-B91F-E94F80E9D68C - f43e169379283aad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ProductsAssignment.ProductDetails) -&gt; () in ProductsAssignment.ProductDetailsViewModel.fetchProductDetails() -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Modules/ProductDetails/Presentation/ViewModel/ProductDetailsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C530A775-7186-4A48-BDE5-01F1A6508718"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Webservice/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "urlSession(_:didReceive:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "C530A775-7186-4A48-BDE5-01F1A6508718 - d848837e5b43161c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ProductsAssignment.AppURLSessionDelegate.urlSession(_: __C.NSURLSession, didReceive: __C.NSURLAuthenticationChallenge, completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Webservice/APIManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "217D3FCD-25E5-41D0-BBD3-8E38C2ADC801"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "trustServer(completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "trustServer(completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E - 20a0d8a1391a0cd7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.NSURLAuthenticationChallenge.trustServer(completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "F3C67340-4067-4B7F-BDAA-1048B753864E - 20a0d8a1391a0cd7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.NSURLAuthenticationChallenge.trustServer(completionHandler: (__C.NSURLSessionAuthChallengeDisposition, Swift.Optional&lt;__C.NSURLCredential&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "ProductsAssignment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sidchauh2/Documents/Siddharth_Workspace/Assignment/ProductsAssignment/Utility/ImageDownloaderAuthenticationChallenge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

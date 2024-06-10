@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var coordinator = NavigationManager(path: NavigationPath())
+    
+    @EnvironmentObject var appCoordinator: AppCoordinator
+    
     var body: some View {
-        NavigationStack(path: $coordinator.path) {
-            coordinator.build(page: .productList)
-                .navigationDestination(for: Page.self) { page in
-                    coordinator.build(page: page)
-                }
-        }
-        .environmentObject(coordinator)
+        ProductsCoordinator(
+            page: .productList,
+            navigationPath: $appCoordinator.path
+        ).view()
     }
 }
 
