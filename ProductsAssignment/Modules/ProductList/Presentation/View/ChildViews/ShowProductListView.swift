@@ -10,7 +10,7 @@ import Combine
 
 struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
     @ObservedObject var viewModel: ViewModel
-    var navigateTo: NavigateTo
+    var output: Output
     
     var body: some View {
         ZStack {
@@ -23,7 +23,7 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
                                 viewModel.loadMoreContent(currentItem: product)
                             })
                             .onTapGesture {
-                                navigateTo.goToProductDetailsView(product.id)
+                                output.goToProductDetailsView(product.id)
                             }
                             .accessibilityElement(children: .combine)
                             .accessibilityAddTraits(.isButton)
@@ -43,5 +43,5 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
 }
 
 #Preview {
-    ShowProductListView(viewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))), navigateTo: NavigateTo(goToProductDetailsView: { id in }))
+    ShowProductListView(viewModel: ProductsViewModel(fetchProductListUseCase: FetchProductListUseCase(repository: ProductsRepository(apiRequestManager: MockAPIManager.shared))), output: Output(goToProductDetailsView: { id in }))
 }

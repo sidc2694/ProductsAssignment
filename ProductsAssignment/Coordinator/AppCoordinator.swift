@@ -16,7 +16,7 @@ final class AppCoordinator: ObservableObject {
     }
 
     @ViewBuilder
-    func view() -> some View {
+    func start() -> some View {
         ContentView()
     }
 }

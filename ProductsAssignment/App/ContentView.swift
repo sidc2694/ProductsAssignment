@@ -15,7 +15,7 @@ struct ContentView: View {
         ProductsCoordinator(
             page: .productList,
             navigationPath: $appCoordinator.path
-        ).view()
+        ).build()
     }
 }
 

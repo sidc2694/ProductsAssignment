@@ -21,11 +21,11 @@ struct ProductsAssignmentApp: App {
         WindowGroup {
             let _ = NetworkCheckManager.shared
             NavigationStack(path: $coordinator.path) {
-                coordinator.view()
+                coordinator.start()
                     .navigationDestination(
                         for: ProductsCoordinator.self
                     ) { coordinator in
-                        coordinator.view()
+                        coordinator.build()
                     }
             }
             .environmentObject(coordinator)

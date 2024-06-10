@@ -30,7 +30,7 @@ final class ProductsCoordinator {
     }
 
     @ViewBuilder
-    func view() -> some View {
+    func build() -> some View {
         switch self.page {
         case .productList:
             productListView()
@@ -44,7 +44,7 @@ final class ProductsCoordinator {
     }
     
     private func productListView() -> some View {
-        let productsView = ProductsView(productsScreenViewModel: appDIContainer.getProductListViewModel(), navigateTo: NavigateTo(goToProductDetailsView: { id in
+        let productsView = ProductsView(productsScreenViewModel: appDIContainer.getProductListViewModel(), output: Output(goToProductDetailsView: { id in
             self.push(ProductsCoordinator(page: .productDetails(id), navigationPath: self.$navigationPath))
         }))
         return productsView
