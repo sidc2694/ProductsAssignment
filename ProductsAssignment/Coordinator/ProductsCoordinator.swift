@@ -13,7 +13,7 @@ enum ProductsPage {
     case productDetails(Int)
 }
 
-final class ProductsCoordinator {
+final class ProductsCoordinator: CoordinatorProtocol {
     @Binding var navigationPath: NavigationPath
 
     private var id: UUID
