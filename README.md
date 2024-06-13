@@ -26,7 +26,7 @@
         - Entities
         - DataSource
 - There are two more files
-    1) Coordinator: It takes care of navigation from one screen to another screen.
+    1) NavigationManager: It takes care of navigation from one screen to another screen
     2) AppDIContainer: It takes care of creating objects for dependency injection.
 - This project contains dedicated classes for handling actual web service call and mock web service call which adheres to single responsibility principle.
 - Both APIManager and MockAPIManager need to implement APIRequestProtocol. This protocol will be used for injecting dependency in Repository class for actual or mock api call.
