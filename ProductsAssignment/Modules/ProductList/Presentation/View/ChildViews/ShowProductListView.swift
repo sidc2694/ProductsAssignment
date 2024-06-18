@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: NavigationManager
+    @EnvironmentObject private var navigationManager: NavigationManager
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
@@ -23,7 +23,7 @@ struct ShowProductListView<ViewModel>: View where ViewModel: ProductsViewModelPr
                                 viewModel.loadMoreContent(currentItem: product)
                             })
                             .onTapGesture {
-                                coordinator.push(.productDetails(product.id))
+                                navigationManager.push(.productDetails(product.id))
                             }
                             .accessibilityElement(children: .combine)
                             .accessibilityAddTraits(.isButton)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol {
-    @EnvironmentObject private var coordinator: NavigationManager
+    @EnvironmentObject private var navigationManager: NavigationManager
     @StateObject private var viewModel: ViewModel
 
     /// Custom initializer to inject view model dependecy
@@ -29,7 +29,7 @@ struct ProductsView<ViewModel>: View where ViewModel: ProductsViewModelProtocol 
             ErrorView(error: error)
         case .dataLoaded:
             ShowProductListView(viewModel: viewModel)
-                .environmentObject(coordinator)
+                .environmentObject(navigationManager)
         }
     }
 }
