@@ -1,5 +1,5 @@
 //
-//  CoordinatorProtocol.swift
+//  NavigationManagerProtocol.swift
 //  ProductsAssignment
 //
 //  Created by Siddharth Chauhan on 03/06/24.
